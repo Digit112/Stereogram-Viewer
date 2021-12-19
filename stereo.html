@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stereogram Viewer</title>
+	<link rel="stylesheet" href="stereo.css">
+	<link href="fa/css/all.css" rel="stylesheet">
+	
+	<script src="stereo.js"></script>
+</head>
+<body onload="draw();">
+	<img src="left.png" id="left" style="display: none;"></img>
+	<img src="right.png" id="right" style="display: none;"></img>
+	
+	<div id="content" class="content">
+		<div id="options" class="options">
+			<button id="tog_do_cross_button" onclick="toggle_do_cross();">Cross-Eyed</button>
+			<button id="tog_make_anaglyph_button" onclick="toggle_make_anaglyph();">Stereoscopic</button>
+			<button id="tog_make_SBS_button" onclick="toggle_make_SBS();">SBS</button>
+			<button id="tog_for_VR_button" onclick="toggle_for_VR();">For Normal Viewing</button>
+			<button id="tog_do_halve_button" onclick="toggle_do_halve();" style="display: none;">Full</button>
+			<div id="set_anaglyph_button" class="dropdown" style="display: none;">
+				<button class="dropbtn">Anaglyph Type &#x25BE</button>
+				<div class="dropdown-content">
+					<button onclick="set_anaglyph_type(0);">Red / Cyan</button>
+					<button onclick="set_anaglyph_type(1);">Red / Blue</button>
+				</div>
+			</div>
+		</div>
+	
+		<canvas id="display">
+			<p>Your browser does not support the HTML canvas, which is required to use this stereogram converter.</p>
+		</canvas>
+	</div>
+</body>
+</html>
+
