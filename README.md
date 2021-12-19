@@ -2,6 +2,8 @@
 
 This viewer written in Javascript loads the two images "left.png" and "right.png" and automatically presents them in the format selected on the page.
 
+The images included in this repo were created by sycamorph from an original artwork by yakovlev-vad.
+
 ## Functionality
 
 This viewer can present the images as an SBS (Side-By-Side), either wall-eyed or cross-eyed, for freeviewing. It can also center them on either half of the screen, either in SBS or O/U (Over/Under) format, for use with VR stereoscope viewers that split the screen down the middle. For both SBS and O/U VR formats, both half and full aspect ratio options exist.
@@ -14,7 +16,7 @@ It is important to note that the process of generating the anaglyph involves rea
 
 ## Opportunities for Improvement
 
-Currently, all operations are performed using an HTML canvas. The process of writing images to a canvas is slow, noticeably for the larger images, and only the anaglyph generator requires it. By using CSS for the other formats, client response time can be improved significantly. This would also allow gif and webm stereograms to be displayed.
+Currently, all operations are performed using an HTML canvas. The process of writing images to a canvas is slow, noticeably for the larger images, and only the anaglyph generator requires it. By using CSS for the other formats, client response time can be improved significantly. This would also allow gif stereograms to be displayed (excluding anaglyphs, of course).
 
 When the window is split by a stereogram viewer, the GUI controls will appear only to one eye. This difference can be disorienting because the two images presented to each eye can't be properly fused. The solution is to have the controls appear on both halves of the screen by duplicating them. Although this is fairly simple for the dedicated viewer, attempting to duplicate an entire webpage with an embedded viewer may not be feasible.
 
