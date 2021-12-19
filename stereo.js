@@ -257,12 +257,16 @@ function compose() {
 		if (make_SBS) {
 			if (for_VR) {
 				out_width /= 2;
+				let offset = 0;
 				if (!do_halve) {
 					out_height /= 2;
+					
+					// In order to ensure full-SBS images are cropped correctly, they should be shifted up slightly to account for the options bar.
+					offset = document.getElementById("options").clientHeight / 2;
 				}
 				
-				ctx.drawImage(left,  (canvas.width/2 - out_width)/2,                  canvas.height/2 - out_height/2, out_width, out_height);
-				ctx.drawImage(right, (canvas.width/2 - out_width)/2 + canvas.width/2, canvas.height/2 - out_height/2, out_width, out_height);
+				ctx.drawImage(left,  (canvas.width/2 - out_width)/2,                  canvas.height/2 - out_height/2 - offset, out_width, out_height);
+				ctx.drawImage(right, (canvas.width/2 - out_width)/2 + canvas.width/2, canvas.height/2 - out_height/2 - offset, out_width, out_height);
 			}
 			else {
 				ctx.drawImage(left,  canvas.width/2 - out_width, canvas.height/2 - out_height/2, out_width, out_height);
